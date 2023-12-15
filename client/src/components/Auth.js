@@ -42,7 +42,6 @@ function LoginForm() {
     axios
       .post('/User/login', { uname, pw }) // Use axios.post here
       .then((resp) => {
-        console.log('Login response:', resp);
 
         if (resp.data && resp.data.jwtToken) {
           jwtToken.value = resp.data.jwtToken;

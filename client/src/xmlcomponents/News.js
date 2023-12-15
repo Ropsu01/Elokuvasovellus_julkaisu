@@ -19,7 +19,7 @@ function NewsPage() {
     // Fetch user groups when the component mounts
     const fetchUserGroups = async () => {
       try {
-        const response = await axios.get('http://localhost:3001/user/groups', {
+        const response = await axios.get('/user/groups', {
           headers: {
             Authorization: `Bearer ${jwtToken.value}`,
           },
