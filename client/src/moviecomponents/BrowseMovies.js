@@ -38,20 +38,22 @@ function BrowseMovies() {
 
     const fetchMovies = useCallback(async (newPage = page) => {
         try {
+            // Construct query params based on filters
             const params = {
                 ...filters,
                 sort_by: sortBy,
                 'vote_count.gte': minVoteCount,
+                'release_date.gte': filters.startYear, // Assuming release_date.gte for movies
+                'release_date.lte': filters.endYear, // Assuming release_date.lte for movies
                 'with_runtime.gte': minMovieLength, // Minimum length
                 'with_runtime.lte': maxMovieLength, // Maximum length
                 page: newPage
             };
-            const url = new URL(`/discover-movies`);
-            url.search = new URLSearchParams(params).toString();
-
-            const response = await fetch(url);
+    
+            // Make sure the URL is correctly pointing to your movies API endpoint
+            const response = await fetch(`/discover-movies?${new URLSearchParams(params)}`);
             const data = await response.json();
-
+    
             if (newPage === 1) {
                 setMovies(data.results || []); // Replace movies for the first page
             } else {
@@ -73,10 +75,11 @@ function BrowseMovies() {
             console.error('Error:', error);
         }
     }, [page, filters, sortBy, minVoteCount, minMovieLength, maxMovieLength]); // Add all dependencies here
-
+    
     useEffect(() => {
         fetchMovies();
     }, [filters, sortBy, minVoteCount, minMovieLength, maxMovieLength, page, fetchMovies]); // Include fetchMovies here
+    
 
 
 
