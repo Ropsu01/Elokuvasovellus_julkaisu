@@ -20,6 +20,8 @@ Sovelluksen etusivulla käyttäjä voi selata suosittuja-, parhaiten arvosteltuj
 
 Omaan profiiliin pääsee siirtymään yläpalkin ”Profile” kohdasta. Profiilista pääsee ”Muokkaa profiilia” -sivulle, jossa voi esimerkiksi vaihtaa profiilikuvaketta ja biotekstiä tai poistaa koko käyttäjätilin. ”Ryhmät”-sivulle pääsee yläpalkin ”Groups” kohdasta, josta pääsee ryhmien sivuille sekä luomaan myös uuden ryhmän.  
 
+## Alkuperäinen UI-suunnitelma
+
 ![Kuva 2. Alkuperäinen UI-suunnitelma](kuvat/originalUI.png)
 
 ## Sovelluksen ER-Kaavio
