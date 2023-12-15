@@ -8,6 +8,8 @@ Elokuvakerho on Oulun Ammattikorkeakoulun tieto- ja viestintätekniikan 2. vuode
 
 Elokuvakerho-sovelluksessa voi selata erilaisia elokuvia ja sarjoja sekä lukea muiden käyttäjien arvosteluita ilman rekisteröitymistä. Mikäli haluaa hyödyntää kaikki sovelluksen ominaisuudet, voi sovellukseen rekisteröityä ja luoda oman käyttäjäprofiilin. Rekisteröitynyt käyttäjä voi lisätä elokuvia suosikkeihin ja kirjoittaa omia arvosteluja. Kaikki omat suosikit ja arvostelut tallentuvat profiiliin, josta ne ovat helposti uudelleen löydettävissä. Sovelluksessa on mahdollista myös perustaa uusia ryhmiä sekä lähettää liittymispyyntöjä jo olemassa oleviin ryhmiin. Ryhmissä jäsenet voivat jakaa keskenään kiinnostavia uutisia ja käydä keskusteluja.
 
+## Sovelluksen etusivu:
+
 #### ![Kuva 1. Sovelluksen etusivu](kuvat/homepage.png)
 
 
@@ -39,8 +41,12 @@ Ryhmämme jäsenet ovat Roope Nahkala, Tomi Pihlajamaa, Valtteri Vimpari, Julius
 
 ## Esittelyvideo
 
-[Linkki esittelyvideoon](link-to-video)
+[Linkki esittelyvideoon](https://youtu.be/w75aTxZCO9o?si=xgC3pi3o-LhbaYj2)
 
 ## Linkki sovellukseen
 
 [Elokuvakerho Websovellus](https://elokuvakerho.onrender.com/)
+
+## API dokumentti
+
+[API documentation](https://documenter.getpostman.com/view/27009159/2s9YkjANet)
