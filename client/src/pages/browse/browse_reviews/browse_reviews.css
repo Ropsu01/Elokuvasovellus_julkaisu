@@ -1,0 +1,110 @@
+/* browse_reviews.css */
+
+.browse-reviews {
+  margin-top: 30px;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-bottom: 30px;
+}
+.clickable {
+  cursor: pointer;
+}
+
+
+.reviews-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Each column takes equal width */
+  gap: 20px;
+}
+
+.review-item {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #000000;
+  display: flex;
+  width: 450px; /* Set a fixed width for each review item */
+}
+
+.jeps-review-content {
+  flex: 1; /* Take up remaining space */
+  display: flex;
+  flex-direction: column; /* Stack the text elements vertically */
+}
+
+.review-item h3 {
+  font-size: 24px;
+  color: #007bff;
+}
+
+.review-item p {
+  margin: 5px 0; /* Separate each paragraph with a margin */
+}
+
+.review-item .rating {
+  font-weight: bold;
+  color: #28a745;
+}
+
+.movie-poster-container {
+  cursor: pointer;
+}
+
+.browse-movie-poster {
+  width: 150px;
+  height: 225px;
+  margin-left: 10px; /* Add margin to separate the image from the text */
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.browse-review-content {
+  padding-left: 10px;
+}
+.sorting-dropdown {
+  display: flex;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+label[for="sortingOrder"] {
+  font-weight: 500;
+  margin-bottom:5px;
+}
+
+#sortingOrder {
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 3px;
+  color: black;
+  cursor: pointer;
+  font-weight: 500;
+  margin-left: 10px;
+  text-align: center;
+  padding:0px 0px;
+}
+
+#sortingOrder,
+#sortingOrder:hover,
+#sortingOrder:hover::-ms-expand {
+  background-color: white;
+  border: 1px solid white;
+  border-radius: 3px;
+  color: black;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-weight: 500;
+  margin-left: 10px;
+}
+
+@media (max-width: 600px) {
+  .review-item{
+    width: 540px;
+  }
+  .reviews-list {
+    grid-template-columns: repeat(1, 1fr); 
+  }
+  #sortingOrder{
+    padding:0px;
+  }
+}

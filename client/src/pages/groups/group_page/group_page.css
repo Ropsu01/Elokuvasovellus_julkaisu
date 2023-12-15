@@ -1,0 +1,489 @@
+
+
+.group-container {
+    display: flex;
+    justify-content: space;
+    align-items: center;
+}
+
+.group-avatar {
+    width: 150px;
+    height: 150px;
+    margin: 20px;
+    background-color: #007bff; /* Your choice of color */
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 60px;
+    font-weight: bold;
+  }
+  
+
+.group-profile {
+    display: flex;
+    flex-direction: column;
+}
+.groupName {
+    display: flex;
+    flex-direction: column;
+    
+    
+  }
+  
+  .groupName h2 {
+    margin: 0;
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+    font-weight: 500;
+  }
+
+.bio-buttons button{
+    background-color: rgb(0, 132, 255);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer; /* Changes cursor to pointer on hover */
+    margin-top: 10px;
+}
+
+.bio-buttons button:hover{
+    background-color: rgb(23, 92, 148);
+    color: white;
+    border: none;
+}
+
+
+.group-buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+    grid-gap: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 60px;
+    cursor: pointer; /* Changes cursor to pointer on hover */
+    width: 100%;
+}
+
+.group-buttons p{
+    margin: 30px;
+}
+
+.group-container{
+    margin-bottom: 50px;
+}
+
+
+.view-change {
+    margin-right: 50px;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+  }
+  
+  .view-change::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background-color: rgb(0, 132, 255);
+    bottom: -8px;
+    left: 0;
+    transition: 0.5s;
+  }
+  
+  .view-change:hover::after, /* This will show the pseudo-element when hovering */
+  .view-change.active-link::after {
+    width: 40px;
+  }
+
+.group-content {
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0;
+    text-align: center;
+}
+
+.profile-content.active-tab {
+    display: block;
+}
+
+.hidden {
+    display: none;
+  }
+
+  .owner-tag {
+    color: rgb(98, 238, 159);
+    font-size: 0.8em;
+    margin-left: 10px;
+    margin-bottom: -3px;
+  }
+
+  .member-avatar {
+    width: 30px; 
+    height: 30px;
+    border-radius: 50%; 
+    margin-right: 10px; 
+    margin-bottom: 8px;
+    cursor:pointer;
+}
+
+.member-name {
+    cursor:pointer;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.member-details {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    align-items: flex-start;
+  }
+  
+.members-list {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+.member-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.member-joined-date{
+    color: silver;
+    font-size:0.7em;
+    margin-left: 10px;
+    margin-bottom: -2px;
+}
+
+.deleteMember button{
+    background-color: rgb(255, 0, 0);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 3px;
+    cursor: pointer; /* Changes cursor to pointer on hover */
+    margin-left:10px
+}
+
+@media (max-width: 600px){
+.view-change {
+    font-size: 16px;
+    margin: 0px 0px 0px;
+  }
+  .group-buttons {
+    margin: 10px;
+  }
+  .group-buttons p{
+    margin: auto;
+  }
+  .group-content h2{
+    margin-top: 60px;
+    font-size: 16px;
+  }
+  .members-list{
+    padding-left: 0px;
+    margin-top: 60px;
+    margin-left: 150px;
+  }
+  .group-content p{
+    font-size: 16px;
+    margin-top: 60px;
+  }
+
+
+}
+  
+.deleteMember{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    margin-bottom: 4px;
+    width: auto;
+}
+
+
+.deleteMember button:hover{
+    background-color: rgb(187, 12, 12);
+    color: white;
+    border: none;
+}
+
+.leaveGroup{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+    margin-bottom: 4px;
+}
+
+.leaveGroup button{
+    background-color: rgb(255, 0, 0);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 3px;
+    cursor: pointer; /* Changes cursor to pointer on hover */
+    margin-top: 10px;
+}
+
+.leaveGroup button:hover{
+    background-color: rgb(187, 12, 12);
+    color: white;
+    border: none;
+}
+
+.group-description p{
+    margin: 0;
+    font-size: 20px;
+    font-weight: 300;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: rgb(255, 255, 255);
+}
+
+.group-description button{
+    background-color: rgb(0, 132, 255);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 7px;
+    cursor: pointer; /* Changes cursor to pointer on hover */
+    margin-top: 10px;
+}
+.group-description button:hover{
+    background-color: rgb(23, 92, 148);
+    color: white;
+    border: none;
+}
+
+.edit-description textarea{
+    width: 300px;
+    height: 100px;
+    border-radius: 5px;
+    border: none;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.edit-description textarea input{
+    border-radius: 5px;
+    border: none;
+    padding: 1px;
+    margin-bottom: 1px;
+    margin-top: 10px;
+}
+
+.edit-description-buttons button{
+    background-color: rgb(0, 132, 255);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 7px;
+    cursor: pointer; /* Changes cursor to pointer on hover */
+    margin-top: 10px;
+    margin-right: 10px;
+    width: 80px;
+}
+
+.edit-description-buttons button:hover{
+    background-color: rgb(23, 92, 148);
+    color: white;
+    border: none;
+}
+
+.group-description-header p{
+    margin: 5px 0;
+    font-size: 20px;
+    font-weight: 300;
+    color: rgb(255, 255, 255);
+}
+
+.group-description-header{
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+
+.message-send-form {
+    display: flex;
+    margin-bottom: 20px;
+    width: 65%; /* Adjust the width as needed */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.message-input {
+    flex-grow: 1;
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    border: 2px solid rgb(0, 132, 255); /* Thicker border with color */
+
+}
+
+.send-message-button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    background-color: rgb(0, 132, 255);
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+
+}
+
+.send-message-button:hover {
+    background-color: rgb(0, 107, 206);
+}
+
+/* Styles for the Chat Messages */
+.chat-messages {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; /* Allows scrolling for overflow in vertical direction */
+    padding: 30px;
+    width: 60%; /* Set a specific width for the container */
+    margin: auto; /* Center the container within its parent */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add shadow */
+}
+
+.message {
+    display: flex;
+    flex-direction: column; /* Stack header and body vertically */
+    align-items: flex-start; /* Aligns items to the top */
+    margin-bottom: 15px;
+    transition: background-color 0.3s; /* Smooth transition for the background color */
+    position: relative; /* Added for relative positioning */
+
+}
+
+.message:hover {
+    background-color: rgb(45, 45, 45); /* Change the background color on hover */
+}
+
+.message .delete-btn {
+    display: none;
+    position: absolute;
+    top: 10px; /* Adjust as needed */
+    right: 10px; /* Adjust as needed */
+    background-color: #ff4d4d; /* Red background */
+    color: white; /* White text */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 5px 10px; /* Padding inside the button */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.2s ease-in-out; /* Smooth background transition */
+}
+
+.message:hover .delete-btn {
+    display: block;
+}
+
+.message .delete-btn:hover {
+    background-color: #ff3333; /* Slightly darker red on hover */
+}
+
+.message-header {
+    display: flex;
+    align-items: center; /* Align avatar and username horizontally */
+    font-size: 0.9em; /* Slightly larger font size */
+
+    
+    margin-bottom: 5px; /* Space between header and message body */
+}
+
+.message-avatar {
+
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.message-body {
+    display: flex;
+    flex-direction: column; /* Stack text and time vertically */
+    justify-content: space-between; /* Space between text and time */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-all;
+    min-height: 60px; /* Minimum height for consistent sizing */
+}
+
+.message-body strong {
+    display: block; /* Ensures username appears on its own line */
+    margin-bottom: 5px;
+}
+
+
+.message-text {
+    /* Styles for the message text */
+    margin-bottom: auto; /* Pushes the time to the bottom */
+}
+
+.message-time {
+    font-size: 0.8em;
+    color: #666;
+    margin-left: 10px; /* Space after the username */
+    margin-top: 2.5px;
+}
+  
+  
+.message-header strong {
+    color: rgb(35, 149, 255); /* You can replace this color with any color you prefer */
+}
+
+  
+
+
+.request-buttons button {
+    background-color: rgb(0, 132, 255);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 7px;
+    cursor: pointer; /* Changes cursor to pointer on hover */
+    margin-top: 10px;
+    margin-right: 10px;
+    width: 80px;
+}
+
+.request-buttons button:hover{
+    background-color: rgb(23, 92, 148);
+    color: white;
+    border: none;
+}
+
+.join-request-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    border-bottom: 2px solid rgb(0, 132, 255);
+    padding-bottom: 10px;
+    width: 50%;
+}
+
