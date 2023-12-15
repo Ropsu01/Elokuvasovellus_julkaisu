@@ -10,7 +10,6 @@ Elokuvakerho-sovelluksessa voi selata erilaisia elokuvia ja sarjoja sekä lukea 
 
 #### ![Kuva 1. Sovelluksen etusivu](kuvat/homepage.png)
 
-## Alustava UI-Suunnitelma
 
 Alla (kuva 2) ryhmän alkuperäinen käyttöliittymäsuunnitelma. Sivun ulkoasua on muutettu alkuperäisestä suunnitelmasta, mutta sivujen navigointi on pysynyt lähes samanlaisena. Olemme kuitenkin lisänneet muutamia lisätoimintoja ja lisäsivuja, joita tässä suunnitelmassa ei ole näkyvillä.  
 
