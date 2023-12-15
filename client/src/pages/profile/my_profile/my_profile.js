@@ -264,19 +264,26 @@ function Profile() {
                     className="favorites-movie-poster"
                   />
                   <div className="favorites-movie-info">
-                    <div className="movie-rating-circle">
-                      <svg width="40" height="40" viewBox="0 0 44 44">
-                        <circle className="rating-circle-bg" cx="22" cy="22" r="20" />
-                        <circle
-                          className="rating-circle"
-                          cx="22"
-                          cy="22"
-                          r="20"
-                          strokeDasharray={`${calculateRating(movie.vote_average)} 999`}
-                        />
-                        <text x="50%" y="50%" dy=".3em" textAnchor="middle" className="rating-text">
-                        {(movie.vote_average || 0).toFixed(1)}           
-                       </text>
+                  <div className="movie-rating-circle">
+                  <svg width="40" height="40" viewBox="0 0 44 44">
+                    <circle
+                      className="rating-circle-bg"
+                      cx="22" cy="22" r="20"
+                    />
+                    <circle
+                      className="rating-circle"
+                      cx="22" cy="22" r="20"
+                      strokeDasharray={`${calculateRating(movie.vote_average)} 999`}
+                    />
+                    <text
+                      x="50%"
+                      y="50%"
+                      dy=".3em" /* Adjust this value as needed */
+                      textAnchor="middle"
+                      className="rating-text"
+                    >
+{movie.vote_average?.toFixed(1)}
+                    </text>
                       </svg>
                     </div>
                     <p className="favorites-movie-release-date">Released: {movie.release_date}</p>
