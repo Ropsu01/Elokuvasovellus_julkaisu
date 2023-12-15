@@ -37,7 +37,6 @@ async function checkUser(username){
 // Modify getUserDetails to include necessary public data
 async function getUserDetails(username) {
   try {
-    // Fetch basic user details
     const userDetailsQuery = 'SELECT fname, lname, username, creation_time, avatar, bio FROM customer WHERE username = $1';
     const userDetailsResult = await pgPool.query(userDetailsQuery, [username]);
     let userDetails = userDetailsResult.rows.length > 0 ? userDetailsResult.rows[0] : null;
@@ -47,18 +46,22 @@ async function getUserDetails(username) {
     }
 
     // Fetch reviews
-    // Adjust the query according to your reviews table structure
     const reviewsResult = await pgPool.query(
       'SELECT review_id, movie_id, rating, review_text, review_date FROM reviews WHERE username = $1', [username]
     );
-    userDetails.reviews = reviewsResult.rows; // Add reviews to user details
+    userDetails.reviews = reviewsResult.rows;
+
+    // Fetch favorites
+    const favoritesResult = await pgPool.query('SELECT movie_id FROM favorites WHERE username = $1', [username]);
+    userDetails.favorites = favoritesResult.rows.map(row => row.movie_id); // Extract just the movie IDs
 
     return userDetails;
   } catch (error) {
     console.error('Error in getUserDetails:', error);
-    throw error; // Rethrow the error for the caller to handle
+    throw error;
   }
 }
+
 
 
 

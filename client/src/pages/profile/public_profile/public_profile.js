@@ -20,42 +20,64 @@ function PublicProfile() {
   
 
   const navigate = useNavigate();
+  
+  const fetchFavorites = async () => {
+    try {
+      const response = await axios.get(`/favorites/${username}`);
+      const favoriteMovieIds = response.data.map(fav => fav.movie_id);
+
+      const movieResponses = await Promise.all(
+        favoriteMovieIds.map(id => axios.get(`/movies/${id}`))
+      );
+      setFavorites(movieResponses.map(res => res.data));
+    } catch (error) {
+      console.error('Error fetching favorites:', error);
+    }
+  };
 
 
   useEffect(() => {
     const fetchMovieDetails = async (movieIds) => {
       try {
         const movieResponses = await Promise.all(
-          movieIds.map(id => axios.get(`/movies/${id}`)) // Update API endpoint if needed
+          movieIds.map(id => axios.get(`/movies/${id}`))
         );
         const newMovies = {};
-        movieResponses.forEach((response, index) => {
-          newMovies[movieIds[index]] = response.data;
+        movieResponses.forEach((response) => {
+          newMovies[response.data.id] = response.data;
         });
-        setMovies(newMovies);
+        return newMovies;
       } catch (error) {
         console.error('Error fetching movie details:', error);
       }
     };
-
-    
-
   
     const fetchUserData = async () => {
       try {
         const response = await axios.get(`/user/profile/${username}`);
         if (response.data) {
           const { creation_time, avatar, favorites, reviews } = response.data;
+  
           setCreationDate(formatCreationDate(creation_time));
           setUserAvatar(avatar ? `/avatars/${avatar}` : '/avatars/defaultAvatar.png');
-          setFavorites(favorites);
           setUserReviews(reviews);
           setUserExists(true);
+          setBio(response.data.bio || 'No bio yet');
   
-          const movieIds = reviews.map(review => review.movie_id);
-          await fetchMovieDetails(movieIds);
-          setBio(response.data.bio || 'No bio yet'); // Replace 'bio' with the actual property name if different
-
+          const reviewMovieIds = reviews.map(review => review.movie_id);
+          const favoriteMovieIds = favorites.map(fav => fav.movie_id);
+  
+          // Fetching movie details for both reviews and favorites concurrently
+          const [reviewMovies, favoriteMovies] = await Promise.all([
+            fetchMovieDetails(reviewMovieIds),
+            fetchMovieDetails(favoriteMovieIds)
+          ]);
+  
+          // Combining the movie details into a single object
+          setMovies({ ...reviewMovies, ...favoriteMovies });
+  
+          // Call fetchFavorites to update the favorites state
+          await fetchFavorites(); // This will update the favorites state
         } else {
           setUserExists(false);
         }
@@ -66,7 +88,12 @@ function PublicProfile() {
     };
   
     fetchUserData();
-  }, [username]);
+  }, [username]); // Make sure to include fetchFavorites in the dependency array if it uses any external state or props
+  
+
+  
+  
+  
 
   useEffect(() => {
     const fetchUserPosts = async () => {
@@ -190,7 +217,7 @@ function PublicProfile() {
                           strokeDasharray={`${calculateRating(movie.vote_average)} 999`}
                         />
                         <text x="50%" y="50%" dy=".3em" textAnchor="middle" className="rating-text">
-                          {movie.vote_average.toFixed(1)}
+                        {movie.vote_average?.toFixed(1)}
                         </text>
                       </svg>
                     </div>
