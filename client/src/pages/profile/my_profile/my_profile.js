@@ -275,8 +275,8 @@ function Profile() {
                           strokeDasharray={`${calculateRating(movie.vote_average)} 999`}
                         />
                         <text x="50%" y="50%" dy=".3em" textAnchor="middle" className="rating-text">
-                          {movie.vote_average.toFixed(1)}
-                        </text>
+                        {(movie.vote_average || 0).toFixed(1)}           
+                       </text>
                       </svg>
                     </div>
                     <p className="favorites-movie-release-date">Released: {movie.release_date}</p>
