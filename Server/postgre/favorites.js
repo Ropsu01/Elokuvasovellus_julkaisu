@@ -1,24 +1,20 @@
 const pgPool = require('./connection'); // Adjust the path based on your actual file structure
-const axios = require('axios');
 
 const getFavorites = async (req, res) => {
   const { username } = req.params;
   try {
-    const favoritesResult = await pgPool.query('SELECT movie_id FROM favorites WHERE username = $1', [username]);
-    
-    const movieDetailsPromises = favoritesResult.rows.map(row =>
-      axios.get(`http://localhost:3001/movies/${row.movie_id}`) // Use your existing route
+    const favoritesResult = await pgPool.query(
+      'SELECT movie_id FROM favorites WHERE username = $1', 
+      [username]
     );
 
-    const moviesDetails = await Promise.all(movieDetailsPromises);
-    const movies = moviesDetails.map(response => response.data);
-
-    res.json(movies);
+    res.json(favoritesResult.rows);
   } catch (error) {
     console.error('Error retrieving favorites:', error);
     res.status(500).json({ error: 'Internal Server Error' });
   }
 };
+
 
 
 const addToFavorites = async (req, res) => {

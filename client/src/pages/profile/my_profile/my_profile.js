@@ -55,17 +55,29 @@ function Profile() {
   }, [username, creationDate]);
 
   useEffect(() => {
-    if (jwtToken.value && username) {
-      axios
-        .get(`/favorites/${username}`, { headers: { Authorization: `Bearer ${jwtToken.value}` } })
-        .then((resp) => {
-          setFavorites(resp.data);
-        })
-        .catch((error) => {
-          console.error('Error fetching favorites:', error);
+    const fetchFavorites = async () => {
+      try {
+        const favoritesResponse = await axios.get(`/favorites/${username}`, {
+          headers: { Authorization: `Bearer ${jwtToken.value}` },
         });
+        const favoriteMovieIds = favoritesResponse.data.map(fav => fav.movie_id);
+  
+        const favoriteMovieDetailsPromises = favoriteMovieIds.map(id => 
+          axios.get(`/movies/${id}`)
+        );
+        const favoriteMoviesDetails = await Promise.all(favoriteMovieDetailsPromises);
+  
+        setFavorites(favoriteMoviesDetails.map(response => response.data));
+      } catch (error) {
+        console.error('Error fetching favorites:', error);
+      }
+    };
+  
+    if (activeTab === 'favourites' && loggedIn) {
+      fetchFavorites();
     }
-  }, [username]);
+  }, [activeTab, loggedIn, username]);
+  
 
   useEffect(() => {
     const fetchUserReviews = async () => {

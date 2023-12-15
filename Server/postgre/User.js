@@ -46,15 +46,6 @@ async function getUserDetails(username) {
       return null; // User not found
     }
 
-    // Fetch favorite movies
-    // This assumes the structure of the favorites table and the existence of a function to get movie details
-    const favoritesResult = await pgPool.query('SELECT movie_id FROM favorites WHERE username = $1', [username]);
-    const movieDetailsPromises = favoritesResult.rows.map(row =>
-      axios.get(`http://localhost:3001/movies/${row.movie_id}`) // Or use your existing function to get movie details
-    );
-    const moviesDetails = await Promise.all(movieDetailsPromises);
-    userDetails.favorites = moviesDetails.map(response => response.data); // Add favorites to user details
-
     // Fetch reviews
     // Adjust the query according to your reviews table structure
     const reviewsResult = await pgPool.query(
