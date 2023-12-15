@@ -242,7 +242,7 @@ function GroupPage() {
         });
 
         alert('Left the group successfully');
-        navigate('/groups');
+        navigate('/search_groups');
         fetchGroupMembers(); // Refresh the member list after leaving the group
       }
     } catch (error) {
