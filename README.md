@@ -10,8 +10,9 @@ Elokuvakerho-sovelluksessa voi selata erilaisia elokuvia ja sarjoja sekä lukea 
 
 ## Sovelluksen etusivu:
 
-#### ![Kuva 1. Sovelluksen etusivu](kuvat/homepage.png)
+#### ![Kuva 1. Sovelluksen etusivu](diagrams/homepage.png)
 
+## Alkuperäinen UI-suunnitelma
 
 Alla (kuva 2) ryhmän alkuperäinen käyttöliittymäsuunnitelma. Sivun ulkoasua on muutettu alkuperäisestä suunnitelmasta, mutta sivujen navigointi on pysynyt lähes samanlaisena. Olemme kuitenkin lisänneet muutamia lisätoimintoja ja lisäsivuja, joita tässä suunnitelmassa ei ole näkyvillä.  
 
@@ -21,13 +22,11 @@ Sovelluksen etusivulla käyttäjä voi selata suosittuja-, parhaiten arvosteltuj
 
 Omaan profiiliin pääsee siirtymään yläpalkin ”Profile” kohdasta. Profiilista pääsee ”Muokkaa profiilia” -sivulle, jossa voi esimerkiksi vaihtaa profiilikuvaketta ja biotekstiä tai poistaa koko käyttäjätilin. ”Ryhmät”-sivulle pääsee yläpalkin ”Groups” kohdasta, josta pääsee ryhmien sivuille sekä luomaan myös uuden ryhmän.  
 
-## Alkuperäinen UI-suunnitelma
-
-![Kuva 2. Alkuperäinen UI-suunnitelma](kuvat/originalUI.png)
+![Kuva 2. Alkuperäinen UI-suunnitelma](diagrams/UI-suunnitelma.png)
 
 ## Sovelluksen ER-Kaavio
 
-![Kuva 3. Sovelluksen ER-kaavio](kuvat/erkaavio.png)
+![Kuva 3. Sovelluksen ER-kaavio](diagrams/most-recent-er-kaavio.png)
 
 ## Millä teknologioilla tehty?
 
@@ -38,6 +37,18 @@ Käyttämämme koodikielet ovat JavaScript, HTML ja CSS. Sovelluksen käyttölii
 ## Ketkä tekivät?
 
 Ryhmämme jäsenet ovat Roope Nahkala, Tomi Pihlajamaa, Valtteri Vimpari, Julius Pohjanen ja Noora Ylitalo.
+
+## Vastuualueemme: 
+
+Roope Nahkala: Fullstack/mm. TMDB API, Elokuvien ja näyttelijöiden sivut. Suodatettu haku. 
+
+Tomi Pihlajamaa: Fullstack/mm. Finnkino XML, API-dokumentaatio 
+
+Valtteri Vimpari: Frontend/mm. Oman näkymän jakaminen  
+
+Julius Pohjanen: Fullstack/mm. Arvostelut, backend testit 
+
+Noora Ylitalo: Fullstack / mm. Käyttäjätilin poisto, ryhmänjäsenten poistaminen/omistajuuden siirto 
 
 ## Esittelyvideo
 
