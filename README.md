@@ -10,7 +10,7 @@ Elokuvakerho-sovelluksessa voi selata erilaisia elokuvia ja sarjoja sekä lukea 
 
 ## Sovelluksen etusivu:
 
-#### ![Kuva 1. Sovelluksen etusivu](diagrams/homepage.png)
+#### ![Kuva 1. Sovelluksen etusivu](kuvat/homepage.png)
 
 ## Alkuperäinen UI-suunnitelma
 
